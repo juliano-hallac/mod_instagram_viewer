@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="3.0" client="site" method="upgrade">
+	<name>Instagram Viewer</name>
+	<author>Juliano Hallac</author>
+	<creationDate>July 2013</creationDate>
+	<copyright>Copyright (C) 2013 Juliano Hallac. All rights reserved.</copyright>
+	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+	<authorEmail>juliano.hallac@gmail.com</authorEmail>
+	<authorUrl></authorUrl>
+	<version>1.0.0</version>
+	<description>Modulo para exibição da foto mais recente do instagram</description>
+	<files>
+		<filename module="mod_instagram_viewer">mod_instagram_viewer.php</filename>
+		<filename>index.html</filename>
+		<filename>helper.php</filename>
+		<filename>mod_instagram_viewer.xml</filename>
+		<folder>tmpl</folder>
+		<folder>language</folder>		
+	</files>
+	<languages>
+		<language tag="pt-BR">language/pt-BR.mod_instagram_viewer.ini</language>
+		<language tag="pt-BR">language/pt-BR.mod_instagram_viewer.sys.ini</language>
+	</languages>
+	<config>
+		<fields name="params">
+			<fieldset name="basic">
+
+			<field 
+				name="user_id" 
+				type="text" 
+				default="" 
+				label="MOD_INSTAGRAM_VIEWER_USER_ID" 
+				description="MOD_INSTAGRAM_VIEWER_USER_ID_DESC" />
+			
+			<field 
+				name="access_token" 
+				type="text" 
+				default="" 
+				label="MOD_INSTAGRAM_VIEWER_TOKEN_ACCESS" 
+				description="MOD_INSTAGRAM_VIEWER_TOKEN_ACCESS_DESC" />
+			
+			<field 
+				name="width" 
+				type="text" 
+				default="306" 
+				label="MOD_INSTAGRAM_VIEWER_IMAGE_WITDH_PX" 
+				description="MOD_INSTAGRAM_VIEWER_IMAGE_WITDH_PX_DESC" />
+
+			<field 
+				name="height" 
+				type="text" 
+				default="306" 
+				label="MOD_INSTAGRAM_VIEWER_IMAGE_HEIGHT_PX" 
+				description="MOD_INSTAGRAM_VIEWER_IMAGE_HEIGHT_PX_DESC" />	
+			<field 
+				name="hashtag" 
+				type="checkbox" 
+				label="MOD_INSTAGRAM_VIEWER_HASHTAG" 
+				description="MOD_INSTAGRAM_VIEWER_HASHTAG_DESC" 
+				value="1" 
+				default="0" />	
+				
+			</fieldset>
+			<fieldset name="advanced">
+
+				<field
+					name="layout"
+					type="modulelayout"
+					label="JFIELD_ALT_LAYOUT_LABEL"
+					description="JFIELD_ALT_MODULE_LAYOUT_DESC" />
+
+				<field
+					name="moduleclass_sfx"
+					type="text"
+					label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL"
+					description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC" />
+
+				<field
+					name="cache"
+					type="list"
+					default="1"
+					label="COM_MODULES_FIELD_CACHING_LABEL"
+					description="COM_MODULES_FIELD_CACHING_DESC">
+					<option
+						value="1">JGLOBAL_USE_GLOBAL</option>
+					<option
+						value="0">COM_MODULES_FIELD_VALUE_NOCACHING</option>
+				</field>
+
+				<field
+					name="cache_time"
+					type="text"
+					default="900"
+					label="COM_MODULES_FIELD_CACHE_TIME_LABEL"
+					description="COM_MODULES_FIELD_CACHE_TIME_DESC" />
+				<field
+					name="cachemode"
+					type="hidden"
+					default="static">
+					<option
+						value="static"></option>
+				</field>
+			</fieldset>
+		</fields>
+	</config>
+</extension>	
